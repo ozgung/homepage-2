@@ -17,6 +17,18 @@ export default function Footer() {
       >
         {metaData.title}
       </a>
+      <br />
+      <span className="text-sm text-gray-600 dark:text-gray-400 mt-2 block">
+        Built with{" "}
+        <a
+          href="https://www.youtube.com/watch?v=D9A4hVWdbvs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 dark:text-blue-400 hover:underline"
+        >
+          Nextfolio Template
+        </a>
+      </span>
       <style jsx>{`
         @media screen and (max-width: 480px) {
           article {

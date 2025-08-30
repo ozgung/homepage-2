@@ -6,6 +6,8 @@ import { highlight } from "sugar-high";
 import { TweetComponent } from "./tweet";
 import { CaptionComponent } from "./caption";
 import { YouTubeComponent } from "./youtube";
+import { MediumComponent } from "./medium";
+import { SubstackComponent } from "./substack";
 import { ImageGrid } from "./image-grid";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
@@ -113,6 +115,8 @@ let components = {
   StaticTweet: TweetComponent,
   Caption: CaptionComponent,
   YouTube: YouTubeComponent,
+  Medium: MediumComponent,
+  Substack: SubstackComponent,
   code: Code,
   Table,
   del: Strikethrough,

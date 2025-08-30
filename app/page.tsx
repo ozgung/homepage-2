@@ -6,6 +6,7 @@ import { formatDate, getBlogPosts } from "./lib/posts";
 import { MediumComponent } from "./components/medium";
 import { SubstackComponent } from "./components/substack";
 import { BlogSection } from "./components/blog-section";
+import { YouTubeComponent } from "./components/youtube";
 import {
   FaXTwitter,
   FaGithub,
@@ -63,19 +64,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section className="mt-12 mb-12">
-        <BlogSection
-          showHeading={false}
-          maxPosts={3}
-          showEmbeds={true}
-        />
-        <div className="mt-6">
-          <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline">
-            View all blog posts →
-          </Link>
-        </div>
-      </section>
       <section className="mt-12">
         <div className="space-y-6">
           {projects.map((project, index) => (
@@ -112,6 +100,14 @@ export default function Page() {
           <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline">
             View all blog posts →
           </Link>
+        </div>
+      </section>
+
+      {/* YouTube Video Section */}
+      <section className="mt-12 mb-12">
+        <h2 className="text-xl font-semibold mb-6 text-blue-900 dark:text-blue-200">Featured Video</h2>
+        <div className="flex justify-center">
+          <YouTubeComponent videoId="D9A4hVWdbvs" />
         </div>
       </section>
     </section>
