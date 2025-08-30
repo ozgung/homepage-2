@@ -68,7 +68,16 @@ export default function Page() {
         <div className="space-y-6">
           {projects.map((project, index) => (
             <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-medium mb-2 text-black dark:text-white">{project.title}</h3>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <h3 className="text-lg font-medium mb-2 text-blue-900 dark:text-blue-200 hover:text-blue-700 dark:hover:text-blue-300 transition-colors cursor-pointer">
+                  {project.title}
+                </h3>
+              </a>
               <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
               <a
                 href={project.url}
