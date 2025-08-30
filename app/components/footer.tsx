@@ -21,7 +21,7 @@ export default function Footer() {
       <span className="text-sm text-gray-600 dark:text-gray-400 mt-2 block">
         Built with{" "}
         <a
-          href="https://www.youtube.com/watch?v=D9A4hVWdbvs"
+          href="https://vercel.com/templates/portfolio/nextfolio-a-simple-next-js-portfolio"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 dark:text-blue-400 hover:underline"
