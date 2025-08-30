@@ -4,7 +4,7 @@ import Image from "next/image";
 interface ImageGridProps {
   images: {
     src: string;
-    alt: string;
+    alt?: string;
     href?: string;
   }[];
   columns?: 2 | 3 | 4; // Accepts 2, 3, or 4 columns
@@ -33,7 +33,7 @@ export const ImageGrid: React.FC<ImageGridProps> = ({
                 className="block w-full h-full"
               >
                 <Image
-                  alt={image.alt}
+                  alt={image.alt || ""}
                   src={image.src}
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
@@ -43,7 +43,7 @@ export const ImageGrid: React.FC<ImageGridProps> = ({
               </a>
             ) : (
               <Image
-                alt={image.alt}
+                alt={image.alt || ""}
                 src={image.src}
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"

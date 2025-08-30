@@ -28,7 +28,7 @@ A clean, fast, and lightweight portfolio template built with [Next.js](https://n
 
 Nextfolio uses [pnpm](https://pnpm.io/installation) for dependency management, so ensure it is installed on your system.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
+Execute [`pn`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
 
 ```
 pnpm create next-app --example https://github.com/1msirius/Nextfolio my-portfolio

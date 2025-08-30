@@ -102,7 +102,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-medium;
+  @apply font-medium text-blue-900 dark:text-blue-200;
 }
 
 .prose strong {
