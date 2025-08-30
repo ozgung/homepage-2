@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { socialLinks } from "./lib/config";
+import { projects } from "./projects/project-data";
 
 export default function Page() {
   return (
@@ -21,6 +23,32 @@ export default function Page() {
           Experienced Software Engineer with a strong background in Image Processing. Proven expertise in 3D Computer Vision, Computer Graphics and Neural Graphics. Skilled in rapid prototyping and driving projects from concept to completion. Seeking a position as a CV/ML Engineer to leverage my skills in developing innovative solutions.
         </p>
       </div>
+
+      {/* Projects Section */}
+      <section className="mt-12">
+        <h2 className="text-xl font-semibold mb-6 text-blue-900 dark:text-blue-200">Projects</h2>
+        <div className="space-y-6">
+          {projects.map((project, index) => (
+            <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg font-medium mb-2 text-black dark:text-white">{project.title}</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
+              >
+                Learn more →
+              </a>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6">
+          <Link href="/projects" className="text-blue-600 dark:text-blue-400 hover:underline">
+            View all projects →
+          </Link>
+        </div>
+      </section>
     </section>
   );
 }
