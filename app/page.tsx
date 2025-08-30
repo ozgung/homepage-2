@@ -108,17 +108,17 @@ export default function Page() {
         <h2 className="text-xl font-semibold mb-6 text-blue-900 dark:text-blue-200">My AI Shorts</h2>
         <div className="space-y-8">
           <div>
-            <h3 className="text-lg font-medium mb-3 text-center text-gray-900 dark:text-gray-100">
+            <p className="prose prose-neutral dark:prose-invert text-center mb-4 max-w-none">
               Building a Next.js Portfolio from Scratch
-            </h3>
+            </p>
             <div className="flex justify-center">
               <YouTubeComponent videoId="D9A4hVWdbvs" />
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-medium mb-3 text-center text-gray-900 dark:text-gray-100">
+            <p className="prose prose-neutral dark:prose-invert text-center mb-4 max-w-none">
               Advanced AI Techniques & Implementation
-            </h3>
+            </p>
             <div className="flex justify-center">
               <YouTubeComponent videoId="kl-KrQOy8yM" />
             </div>
