@@ -13,4 +13,6 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/ozgungenc/",
   linkedin: "https://www.linkedin.com/in/ozgungenc",
   email: "mailto:ozgungenc@gmail.com",
+  medium: "https://medium.com/@ozgungenc",
+  substack: "https://ozgungenc.substack.com",
 };

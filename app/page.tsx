@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { socialLinks } from "./lib/config";
 import { projects } from "./projects/project-data";
+import { formatDate, getBlogPosts } from "./lib/posts";
+import { MediumComponent } from "./components/medium";
+import { SubstackComponent } from "./components/substack";
+import { BlogSection } from "./components/blog-section";
 import {
   FaXTwitter,
   FaGithub,
@@ -9,6 +13,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa6";
 import { TbMailFilled } from "react-icons/tb";
+import { SiMedium, SiSubstack } from "react-icons/si";
 
 function SocialLink({ href, icon: Icon }) {
   return (
@@ -16,7 +21,7 @@ function SocialLink({ href, icon: Icon }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-lg hover:opacity-80 transition-opacity duration-200 mx-2"
+      className="text-lg text-blue-900 dark:text-blue-200 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 mx-2"
     >
       <Icon />
     </a>
@@ -52,13 +57,26 @@ export default function Page() {
           <SocialLink href={socialLinks.github} icon={FaGithub} />
           <SocialLink href={socialLinks.instagram} icon={FaInstagram} />
           <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
+          <SocialLink href={socialLinks.medium} icon={SiMedium} />
+          <SocialLink href={socialLinks.substack} icon={SiSubstack} />
           <SocialLink href={socialLinks.email} icon={TbMailFilled} />
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Blog Section */}
+      <section className="mt-12 mb-12">
+        <BlogSection
+          showHeading={false}
+          maxPosts={3}
+          showEmbeds={true}
+        />
+        <div className="mt-6">
+          <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline">
+            View all blog posts →
+          </Link>
+        </div>
+      </section>
       <section className="mt-12">
-        <h2 className="text-xl font-semibold mb-6 text-blue-900 dark:text-blue-200">Projects</h2>
         <div className="space-y-6">
           {projects.map((project, index) => (
             <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
@@ -78,6 +96,21 @@ export default function Page() {
         <div className="mt-6">
           <Link href="/projects" className="text-blue-600 dark:text-blue-400 hover:underline">
             View all projects →
+          </Link>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="mt-12 mb-12">
+        <BlogSection
+          showHeading={true}
+          maxPosts={3}
+          showEmbeds={true}
+          isMainPage={true}
+        />
+        <div className="mt-6">
+          <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline">
+            View all blog posts →
           </Link>
         </div>
       </section>
