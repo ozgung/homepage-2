@@ -105,9 +105,24 @@ export default function Page() {
 
       {/* YouTube Video Section */}
       <section className="mt-12 mb-12">
-        <h2 className="text-xl font-semibold mb-6 text-blue-900 dark:text-blue-200">Featured Video</h2>
-        <div className="flex justify-center">
-          <YouTubeComponent videoId="D9A4hVWdbvs" />
+        <h2 className="text-xl font-semibold mb-6 text-blue-900 dark:text-blue-200">My AI Shorts</h2>
+        <div className="space-y-8">
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-center text-gray-900 dark:text-gray-100">
+              Building a Next.js Portfolio from Scratch
+            </h3>
+            <div className="flex justify-center">
+              <YouTubeComponent videoId="D9A4hVWdbvs" />
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-center text-gray-900 dark:text-gray-100">
+              Advanced AI Techniques & Implementation
+            </h3>
+            <div className="flex justify-center">
+              <YouTubeComponent videoId="kl-KrQOy8yM" />
+            </div>
+          </div>
         </div>
       </section>
     </section>
