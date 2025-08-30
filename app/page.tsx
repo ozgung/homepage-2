@@ -2,6 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { socialLinks } from "./lib/config";
 import { projects } from "./projects/project-data";
+import {
+  FaXTwitter,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa6";
+import { TbMailFilled } from "react-icons/tb";
+
+function SocialLink({ href, icon: Icon }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-lg hover:opacity-80 transition-opacity duration-200 mx-2"
+    >
+      <Icon />
+    </a>
+  );
+}
 
 export default function Page() {
   return (
@@ -17,12 +37,24 @@ export default function Page() {
           priority
         />
       </a>
+
       <h1 className="mb-8 text-2xl font-medium text-blue-900 dark:text-blue-200">Visual AI Engineer</h1>
       <div className="prose prose-neutral dark:prose-invert" style={{ textAlign: "justify" }}>
         <p>
           Experienced Software Engineer with a strong background in Image Processing. Proven expertise in 3D Computer Vision, Computer Graphics and Neural Graphics. Skilled in rapid prototyping and driving projects from concept to completion. Seeking a position as a CV/ML Engineer to leverage my skills in developing innovative solutions.
         </p>
       </div>
+
+      {/* Social Links Section - Under Bio */}
+      <section className="flex justify-start mb-8 mt-8">
+        <div className="flex items-center gap-2">
+          <SocialLink href={socialLinks.twitter} icon={FaXTwitter} />
+          <SocialLink href={socialLinks.github} icon={FaGithub} />
+          <SocialLink href={socialLinks.instagram} icon={FaInstagram} />
+          <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
+          <SocialLink href={socialLinks.email} icon={TbMailFilled} />
+        </div>
+      </section>
 
       {/* Projects Section */}
       <section className="mt-12">
