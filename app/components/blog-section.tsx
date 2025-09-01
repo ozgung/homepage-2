@@ -30,10 +30,20 @@ export function BlogSection({
 
       {showEmbeds && (
         <>
+          {/* New Medium Embed Section */}
+          <div className="mb-12">
+            <MediumComponent
+              url="https://medium.com/@ozgungenc/balon-35df1f6a9cd5"
+              description="Yapay zeka bir balon mu?"
+              title="Balon"
+            />
+          </div>
+
           {/* Substack Embed Section */}
           <div className="mb-12">
             <SubstackComponent
               url="https://open.substack.com/pub/ozgungenc/p/neural-graphics-neuralangelo"
+              description="Exploring Neural Graphics methods"
               title="Neural Surface Reconstruction using Neuralangelo"
             />
           </div>
