@@ -30,14 +30,22 @@ export function BlogSection({
 
       {showEmbeds && (
         <>
-          {/* New Medium Embed Section */}
+          {/* New Substack Embed Section */}
+          <div className="mb-12">
+            <SubstackComponent
+              url="https://open.substack.com/pub/ozgungenc/p/the-bubble?r=bynn3&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
+              title="The Bubble"
+              description="Is AI a Bubble? Three Definitions and a Look at Hype vs. Reality"
+            />
+          </div>
+          {/* New Medium Embed Section
           <div className="mb-12">
             <MediumComponent
               url="https://medium.com/@ozgungenc/balon-35df1f6a9cd5"
               description="Yapay zeka bir balon mu?"
               title="Balon"
             />
-          </div>
+          </div> */}
 
           {/* Substack Embed Section */}
           <div className="mb-12">
@@ -47,6 +55,8 @@ export function BlogSection({
               title="Neural Surface Reconstruction using Neuralangelo"
             />
           </div>
+
+          
 
           {/* Medium Embed Section */}
           <div className="mb-12">
