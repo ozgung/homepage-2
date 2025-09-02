@@ -49,6 +49,11 @@ export default function Page() {
         <p>
           Experienced Software Engineer with a strong background in Image Processing. Proven expertise in 3D Computer Vision, Computer Graphics and Neural Graphics. Skilled in rapid prototyping and driving projects from concept to completion. Seeking a position as a CV/ML Engineer to leverage my skills in developing innovative solutions.
         </p>
+                <p>
+          <a href="/ozgungenc-2025-September-web.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+            View Resume 2025 (PDF) &rarr;
+          </a>
+        </p>
       </div>
 
       {/* Social Links Section - Under Bio */}
