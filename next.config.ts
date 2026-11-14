@@ -3,6 +3,16 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        // Keep previously shared résumé links working; always serve the latest CV.
+        source: "/ozgungenc-2025-September-web.pdf",
+        destination: "/ozgungenc-2026.pdf",
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

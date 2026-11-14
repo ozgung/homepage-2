@@ -7,6 +7,12 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Dailies: AI Film Studio",
+    year: 2026,
+    description: "AI film studio for iPhone: from one line to a short film",
+    url: "https://makedailies.com/",
+  },
+  {
     title: "OZ: Video Effects & Cam",
     year: 2022,
     description: "Creative video effects app for iOS",

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/lib/posts";
 import { MediumComponent } from "app/components/medium";
 import { SubstackComponent } from "app/components/substack";
+import { LinkedInComponent } from "app/components/linkedin";
 
 interface BlogSectionProps {
   showHeading?: boolean;
@@ -30,6 +31,24 @@ export function BlogSection({
 
       {showEmbeds && (
         <>
+          {/* LinkedIn Article Section */}
+          <div className="mb-12">
+            <LinkedInComponent
+              url="https://www.linkedin.com/pulse/weight-space-programming-real-coding-agent-what-worked-özgün-genç-wdrqf/"
+              title="Weight-space programming on a real coding agent: what worked, what didn't"
+              description="Frontier models edited Gemma 4 E4B's weights without gradients to fix a coding-agent defect; the defect dropped, but every edit broke working calls and solved tasks did not move."
+            />
+          </div>
+
+          {/* LinkedIn Article Section */}
+          <div className="mb-12">
+            <LinkedInComponent
+              url="https://www.linkedin.com/pulse/microgpt-türkçe-anlatım-karpathynin-200-satırlık-kodu-özgün-genç-knqzf/"
+              title="microGPT Türkçe Anlatım: Karpathy'nin 200 satırlık kodu ile Yapay Zekanın temellerine bakış"
+              description="Karpathy'nin microgpt'sini satır satır inceleyip modern transformer mimarisini en öz haliyle anlamaya çalışıyoruz."
+            />
+          </div>
+
           {/* New Substack Embed Section */}
           <div className="mb-12">
             <SubstackComponent
