@@ -1,0 +1,24 @@
+// ozgungenc.com: the Next.js static export (out/) served as Cloudflare Workers static assets. No Worker code runs;
+// redirects and feed aliases come from public/_redirects. Deploy with `pnpm run deploy` (next build + wrangler deploy).
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "ozgungenc-site",
+	"compatibility_date": "2026-11-01",
+	"assets": {
+		"directory": "./out",
+		// /blog is served from blog.html, and /reactvr/ from reactvr/index.html.
+		"html_handling": "auto-trailing-slash",
+		// Unknown paths get out/404.html (Next.js not-found page) with a 404 status.
+		"not_found_handling": "404-page"
+	},
+	// Served on zone routes: every request to ozgungenc.com / www.ozgungenc.com is answered by this Worker before
+	// Cloudflare would contact an origin, so the hostnames' existing proxied DNS records are never used.
+	// (Custom domains would need those DNS records deleted first.)
+	"workers_dev": false,
+	"preview_urls": false,
+	"routes": [
+		{ "pattern": "ozgungenc.com/*", "zone_name": "ozgungenc.com" },
+		{ "pattern": "www.ozgungenc.com/*", "zone_name": "ozgungenc.com" }
+	],
+	"observability": { "enabled": true }
+}

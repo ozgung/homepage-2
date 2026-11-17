@@ -1,49 +1,12 @@
-
 import type { NextConfig } from "next";
 
+// The site is a fully static export (out/), served by a Cloudflare Worker's static assets (see wrangler.jsonc).
+// Redirects and feed rewrites live in public/_redirects, because Next.js redirects()/rewrites() need a Node server.
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        // Keep previously shared résumé links working; always serve the latest CV.
-        source: "/ozgungenc-2025-September-web.pdf",
-        destination: "/ozgungenc-2026.pdf",
-        permanent: false,
-      },
-    ];
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/rss.xml",
-        destination: "/feed/rss.xml",
-      },
-      {
-        source: "/atom.xml",
-        destination: "/feed/atom.xml",
-      },
-      {
-        source: "/feed.json",
-        destination: "/feed/feed.json",
-      },
-      {
-        source: "/rss",
-        destination: "/feed/rss.xml",
-      },
-      {
-        source: "/feed",
-        destination: "/feed/rss.xml",
-      },
-      {
-        source: "/atom",
-        destination: "/feed/atom.xml",
-      },
-      {
-        source: "/json",
-        destination: "/feed/feed.json",
-      },
-    ];
+  output: "export",
+  images: {
+    unoptimized: true,
   },
 };
 

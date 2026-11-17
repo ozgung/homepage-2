@@ -2,6 +2,9 @@ import { MetadataRoute } from "next";
 import { getBlogPosts } from "./lib/posts";
 import { metaData } from "./lib/config";
 
+// Static export: rendered once at build time.
+export const dynamic = "force-static";
+
 const BaseUrl = metaData.baseUrl.endsWith("/")
   ? metaData.baseUrl
   : `${metaData.baseUrl}/`;

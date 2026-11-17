@@ -4,8 +4,17 @@ import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/lib/posts";
 import { metaData } from "app/lib/config";
 
+// Static export: only the posts known at build time exist.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   let posts = getBlogPosts();
+
+  // `output: "export"` rejects an empty list, so until the first MDX post exists a placeholder slug keeps the route
+  // buildable; it renders the not-found page.
+  if (posts.length === 0) {
+    return [{ slug: "_" }];
+  }
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -27,9 +36,7 @@ export async function generateMetadata({
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image
-    ? image
-    : `${metaData.baseUrl}/og?title=${encodeURIComponent(title)}`;
+  let ogImage = image ? image : new URL(metaData.ogImage, metaData.baseUrl).toString();
 
   return {
     title,
@@ -76,9 +83,7 @@ export default async function Blog({ params }) {
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${metaData.baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            image: new URL(post.metadata.image || metaData.ogImage, metaData.baseUrl).toString(),
             url: `${metaData.baseUrl}/blog/${post.slug}`,
             author: {
               "@type": "Person",

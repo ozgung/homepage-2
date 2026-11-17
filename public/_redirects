@@ -1,0 +1,14 @@
+# Cloudflare Workers static assets redirects: [source] [destination] [code]
+# https://developers.cloudflare.com/workers/static-assets/redirects/
+
+# Keep previously shared résumé links working; always serve the latest CV.
+/ozgungenc-2025-September-web.pdf /ozgungenc-2026.pdf 302
+
+# Feed aliases (200 = served in place, like the old Next.js rewrites).
+/rss.xml /feed/rss.xml 200
+/atom.xml /feed/atom.xml 200
+/feed.json /feed/feed.json 200
+/rss /feed/rss.xml 200
+/feed /feed/rss.xml 200
+/atom /feed/atom.xml 200
+/json /feed/feed.json 200
