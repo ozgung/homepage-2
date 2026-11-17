@@ -49,6 +49,15 @@ export function BlogSection({
             />
           </div>
 
+          {/* LinkedIn Article Section */}
+          <div className="mb-12">
+            <LinkedInComponent
+              url="https://www.linkedin.com/pulse/drifting-models-new-paradigm-generative-modeling-özgün-genç-fhi4f/"
+              title="Drifting Models: A new Paradigm For Generative Modeling?"
+              description="A review of “Generative Modeling via Drifting” from Kaiming He's team (MIT/Harvard), and what it could mean for diffusion and flow-based models."
+            />
+          </div>
+
           {/* New Substack Embed Section */}
           <div className="mb-12">
             <SubstackComponent

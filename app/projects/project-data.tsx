@@ -3,6 +3,7 @@ export interface Project {
   year: number;
   description: string;
   url: string;
+  icon?: string;
 }
 
 export const projects: Project[] = [
@@ -11,12 +12,14 @@ export const projects: Project[] = [
     year: 2026,
     description: "AI film studio for iPhone: from one line to a short film",
     url: "https://makedailies.com/",
+    icon: "/projects/dailies.png",
   },
   {
     title: "OZ: Video Effects & Cam",
     year: 2022,
     description: "Creative video effects app for iOS",
     url: "https://ozapp.co",
+    icon: "/projects/oz.png",
   },
   {
     title: "VR Résumé",

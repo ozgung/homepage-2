@@ -73,25 +73,39 @@ export default function Page() {
         <div className="space-y-6">
           {projects.map((project, index) => (
             <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <h3 className="text-lg font-medium mb-2 text-blue-900 dark:text-blue-200 hover:text-blue-700 dark:hover:text-blue-300 transition-colors cursor-pointer">
-                  {project.title}
-                </h3>
-              </a>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
-              >
-                Learn more →
-              </a>
+              <div className="flex items-start gap-4">
+                {project.icon && (
+                  <Image
+                    src={project.icon}
+                    alt=""
+                    width={56}
+                    height={56}
+                    unoptimized
+                    className="w-14 h-14 flex-shrink-0 rounded-[22%] ring-1 ring-black/5 dark:ring-white/10"
+                  />
+                )}
+                <div className="flex-1 min-w-0">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <h3 className="text-lg font-medium mb-2 text-blue-900 dark:text-blue-200 hover:text-blue-700 dark:hover:text-blue-300 transition-colors cursor-pointer">
+                      {project.title}
+                    </h3>
+                  </a>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
+                  >
+                    Learn more →
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>
