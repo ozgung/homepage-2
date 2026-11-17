@@ -1,12 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { Navbar } from "./components/nav";
 import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-switch";
 import { metaData } from "./lib/config";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const GA_MEASUREMENT_ID = "G-X1C1M13JHF";
 
 export const metadata: Metadata = {
   metadataBase: new URL(metaData.baseUrl),
@@ -80,6 +83,17 @@ export default function RootLayout({
             {children}
             <Footer />
           </main>
+          {/* Google Analytics 4: stream "ozgungenc.com - GA4" */}
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="ga4" strategy="afterInteractive">
+            {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+          </Script>
         </ThemeProvider>
       </body>
     </html>
